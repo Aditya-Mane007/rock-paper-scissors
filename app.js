@@ -55,7 +55,7 @@ function result(userPick,computerPick) {
     score--;
   }
   if (userPick === "rock" && computerPick == "scissors") {
-    score--;
+    score++;
   }
   if (userPick === "rock" && computerPick == "rock") {
     score;
