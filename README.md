@@ -58,4 +58,4 @@ Users should be able to:
 - Frontend Mentor - [@Aditya-Mane007](https://www.frontendmentor.io/profile/Aditya-Mane007)
 - Twitter - [@AdityaM52821612](https://twitter.com/AdityaM52821612)
 - Linkdin - [Aditya Ashok Mane](https://www.linkedin.com/in/aditya-mane-562b52269/)
-"# rock-paper-scissors" 
+

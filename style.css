@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  --ScissorGradient: #ec9e0e to #eda92133;
+  --PaperGradient: rgb(72, 101, 244) rgb(87, 113, 245);
+  --RockGradient: rgb(220, 46, 78) to rgb(221, 64, 93);
+  --LizardGradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+  --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+
+  --DarkText: hsl(229, 25%, 31%);
+  --ScoreText: hsl(229, 64%, 46%);
+  --HeaderOutline: hsl(217, 16%, 45%);
+
+  --RadialGradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+}
+
+body {
+  background: radial-gradient(circle, #1f3756 0%, #141539 100%);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container header {
+  width: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  margin-top: 0rem;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.container header .score-card {
+  width: 15%;
+  height: 90%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: var();
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.container header .score-card .score-number {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 40px;
+  color: var(--DarkText);
+}
+
+.container .hands {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  margin-top: 5rem;
+  /* display: none; */
+}
+.container .hands .triangle {
+  width: 20rem;
+  height: 20rem;
+  display: block;
+}
+
+.container .hands .hand {
+  cursor: pointer;
+}
+
+.container .hands .hand img {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+}
+
+.container .hands .rock {
+  position: absolute;
+  transform: translate(0%, 60%);
+}
+
+.container .hands .paper {
+  position: absolute;
+  transform: translate(-80%, -80%);
+}
+
+.container .hands .scissor {
+  position: absolute;
+  transform: translate(80%, -80%);
+}
+
+.contest {
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+  margin-inline: auto;
+  color: white;
+  display: none;
+}
+
+.contest .user-hand,
+.computer-hand {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  animation: scale-up-center 1s;
+}
+
+.contest .user-hand img {
+  width: 200px;
+  height: 200px;
+}
+.contest .computer-hand img {
+  width: 200px;
+  height: 200px;
+}
+
+.contest .result {
+  width: 100%;
+  height: 100%;
+  margin: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.contest .result .result-text {
+  width: 100%;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: scale-up-center 1s;
+}
+
+.contest .result .play-again-btn {
+  width: 200px;
+  height: 50px;
+  margin: 0.5rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: red;
+  background: white;
+  cursor: pointer;
+}
+
+.container footer {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: -2rem;
+  display: flex;
+  justify-content: end;
+}
+
+.container footer .rules-btn {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+dialog[open] {
+  width: 400px;
+  height: 400px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: scale-up-center 1s;
+}
+
+dialog .header-div {
+  width: 90%;
+  height: 50px;
+  margin: 0.5rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  cursor: pointer;
+}
+
+dialog .header-div .title {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+dialog img {
+  width: 90%;
+  height: auto;
+}
+
+dialog::backdrop {
+  background: black;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media screen and ((min-width: 768px) and (max-width:1024px)) {
+  .container header {
+    width: 70%;
+  }
+  .container header .score-card {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container header {
+    width: 90%;
+    margin-top: 0rem;
+  }
+  .container header .score-card {
+    width: 20%;
+  }
+
+  .container .hands {
+    width: 90%;
+  }
+  .container .hands .triangle {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .container .hands .hand img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .container .contest {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    display: none;
+    margin-top: 2rem;
+  }
+  .contest .user-hand img {
+    width: 150px;
+    height: 150px;
+  }
+  .contest .computer-hand img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .result {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    transform: translate(-8%, 40%);
+  }
+
+  .container footer {
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+}
